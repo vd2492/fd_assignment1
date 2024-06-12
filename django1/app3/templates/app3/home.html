@@ -1,0 +1,66 @@
+<!-- permapp/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Permutations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        .error {
+            color: red;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Word Permutations</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Get Permutations</button>
+    </form>
+    {% if result %}
+        <h2>Permutations of "{{ word }}":</h2>
+        <ul>
+            {% for perm in result %}
+                <li>{{ perm }}</li>
+            {% endfor %}
+        </ul>
+    {% elif word %}
+        <p class="error">Invalid input. Please enter a word with 3 to 5 letters.</p>
+    {% endif %}
+</body>
+</html>

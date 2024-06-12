@@ -1,0 +1,57 @@
+<!-- doctors/templates/welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to RV Aster Hospital</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to RV Aster Hospital</h1>
+        <ul>
+            <li><a href="{% url 'doc1' %}">Doctor 1</a></li>
+            <li><a href="{% url 'doc2' %}">Doctor 2</a></li>
+            <li><a href="{% url 'doc3' %}">Doctor 3</a></li>
+        </ul>
+    </div>
+</body>
+</html>

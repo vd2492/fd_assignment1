@@ -1,0 +1,22 @@
+<!-- app1/templates/app1/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+</head>
+<body>
+    <h1>Register for a Course</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_name">Name:</label><br>
+        <input type="text" id="id_name" name="name"><br>
+        <label for="id_college">College:</label><br>
+        <input type="text" id="id_college" name="college"><br>
+        <label for="id_course">Course:</label><br>
+        <input type="text" id="id_course" name="course"><br><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
